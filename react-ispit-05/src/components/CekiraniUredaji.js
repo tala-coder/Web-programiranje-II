@@ -1,10 +1,15 @@
 import React from 'react'
 
-const PutovanjaCheckbox = ({ handleCheck }) => {
+const CekiraniUredaji = ({ handleCheck }) => {
     return (
         <>
             <fieldset>
-                <legend>Odaberi Tip Pametnog Uredaja:</legend> 
+                <legend>Odaberi Tip Pametnog Uredaja:</legend>
+                <div>
+                    <input type="checkbox" id="tablet" name="tablet"
+                        onChange={(e) => handleCheck(e, 'tablet')} />
+                    <label htmlFor="tablet">tablet</label>
+                </div>
 
                 <div>
                     <input type="checkbox" id="mobitel" name="mobitel"
@@ -29,4 +34,4 @@ const PutovanjaCheckbox = ({ handleCheck }) => {
     )
 }
 
-export default PutovanjaCheckbox
+export default CekiraniUredaji

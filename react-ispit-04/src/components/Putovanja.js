@@ -1,25 +1,26 @@
 import React from 'react'
 import Putovanje from './Putovanje'
 
-const Putovanja = ({ predmeti, checked }) => {
+const Putovanja = ({ predmeti, checked ,updateItem, deletePredmet}) => {
   console.log(predmeti);
 
   return (
     <div>
-      {predmeti.map(({naziv, zimsko, ljetno, proljetno, id}) => {
+      {predmeti.map(({naziv, mobitel, cijena, timestamp, frizider, sat, id}) => {
         return (
-          (zimsko && checked.zimsko)
-          || (ljetno && checked.ljetno)
-          || (proljetno && checked.proljetno) 
+          (mobitel && checked.mobitel)
+          || (frizider && checked.frizider)
+          || (sat && checked.sat) 
               ?
               <Putovanje
+              update={updateItem}
                   key={id}
-                  naziv={naziv}
-                  zimsko={zimsko}
-                  ljetno={ljetno}
-                  proljetno={proljetno}
-                  // poslovno={poslovno}
-                  // deletePredmet={deletePredmet}
+                  naziv={naziv}  
+                  mobitel={mobitel}  
+                  cijena={cijena}  
+                  timestamp={timestamp}  
+                  frizider={frizider}  
+                  deletePredmet={deletePredmet}
                   id={id}
               /> : null
       );
